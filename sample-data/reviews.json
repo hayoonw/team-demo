@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "category": "positive",
+    "rating": 5,
+    "review": "Found this place by accident and I'm so glad I did. The oat milk latte was perfectly smooth and the barista took the time to chat about the beans. Already planning to come back this weekend!"
+  },
+  {
+    "id": 2,
+    "category": "positive",
+    "rating": 5,
+    "review": "Cozy spot with great lighting for working. Wi-Fi is fast, outlets at most tables, and the blueberry scone was still warm. I stayed three hours and nobody rushed me."
+  },
+  {
+    "id": 3,
+    "category": "negative",
+    "rating": 1,
+    "review": "Waited 25 minutes for a single cold latte. When I asked about it, the guy at the counter just shrugged and rolled his eyes. Won't be coming back."
+  },
+  {
+    "id": 4,
+    "category": "negative",
+    "rating": 2,
+    "review": "The croissant was stale and tasted like it had been sitting out since yesterday. The tables were also sticky. For $6 I expected much better."
+  },
+  {
+    "id": 5,
+    "category": "negative",
+    "rating": 1,
+    "review": "Terrible. I'm allergic to nuts and told them clearly, but my drink came with almond milk. I had to throw it out. Please train your staff!!"
+  },
+  {
+    "id": 6,
+    "category": "mixed",
+    "rating": 3,
+    "review": "Coffee is honestly some of the best in town, but the place is tiny and so loud I couldn't hear my friend across the table. Great for takeaway, not for catching up."
+  },
+  {
+    "id": 7,
+    "category": "ambiguous",
+    "rating": 2,
+    "review": "Oh wow, what a *relaxing* 20 minute wait for a drip coffee. The mug was cute though."
+  },
+  {
+    "id": 8,
+    "category": "ambiguous",
+    "rating": 3,
+    "review": "It's a cafe. They serve coffee. Nothing special but nothing wrong either."
+  }
+]
