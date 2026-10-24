@@ -1,16 +1,74 @@
-# React + Vite
+# 카페 리뷰 답글 도우미
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+손님 리뷰를 붙여넣으면, AI(Claude)가 사장님 대신 답글 초안을 써주는 웹앱입니다.
 
-Currently, two official plugins are available:
+## 왜 만들었나요?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+카페를 운영하다 보면 리뷰에 답글을 달 시간이 없습니다. 특히 불만 리뷰는 마음이 상해서 미루게 되고, 급하게 쓰다 보면 방어적인 말투가 되기 쉽죠. 답글이 없거나 성의 없는 답글은 다음 손님의 선택에도 영향을 줍니다.
 
-## React Compiler
+이 앱은 몇 초 만에 **바로 게시할 수 있는 수준의 초안**을 만들어 줍니다. 최종 확인과 게시는 항상 사장님이 합니다.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 이렇게 사용합니다
 
-## Expanding the Oxlint configuration
+1. 받은 리뷰를 복사해서 입력창에 붙여넣습니다.
+2. 답글 톤을 고릅니다.
+   - **친근함:** 단골과 이야기하듯 따뜻하고 편안하게
+   - **정중함:** 차분하고 예의 바르게
+3. 생성된 초안을 확인하고, 마음에 들면 복사해서 게시합니다. 아쉬우면 다시 생성할 수 있습니다.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+### 어떤 답글이 나오나요?
+
+| 리뷰 유형 | 답글 방식 |
+|---|---|
+| 칭찬 | 구체적인 칭찬 포인트를 짚어 감사하고, 재방문을 자연스럽게 권유 |
+| 불만 | 문제를 인정하고 사과. 변명하거나 손님 탓을 하지 않음 |
+| 칭찬과 불만이 섞인 리뷰 | 좋은 점엔 감사, 아쉬운 점엔 사과를 함께 |
+| 애매하거나 비꼬는 리뷰 | 감정을 단정하지 않고 신중하게 응답 |
+
+앱은 환불, 쿠폰 같은 **사장님이 정하지 않은 보상은 절대 약속하지 않습니다.** 리뷰와 같은 언어(한국어/영어)로 답글을 씁니다.
+
+## 지금은 하지 않는 것
+
+로그인, 구글·네이버 리뷰 자동 연동·자동 게시, 리뷰 저장, 통계 기능은 이번 버전에 없습니다. 붙여넣고, 받아서, 복사하는 것에 집중했습니다.
+
+## 실행 방법
+
+### 준비물
+
+- [Node.js](https://nodejs.org) (LTS 버전 권장)
+- Anthropic API 키 (https://console.anthropic.com 에서 발급)
+
+### 실행
+
+```bash
+# 1. 코드 내려받기
+git clone <이 레포 주소>
+cd hayoon-team-demo
+
+# 2. 패키지 설치
+npm install
+
+# 3. 개발 서버 실행
+npm run dev
+```
+
+터미널에 표시된 주소(보통 `http://localhost:5173`)를 브라우저에서 열면 됩니다.
+
+> API 키 설정 방법은 엔지니어 담당 파트 확정 후 이 문서에 추가됩니다. 키는 절대 코드나 깃허브에 올리지 마세요.
+
+## 폴더 안내
+
+| 경로 | 내용 |
+|---|---|
+| `src/` | 앱 코드 |
+| `prompts/system-prompt.md` | Claude에게 주는 답글 작성 지침 (톤, 부정 리뷰 대응 규칙 등) |
+| `sample-data/reviews.json` | 테스트용 카페 리뷰 8개 (칭찬·불만·애매한 리뷰) |
+| `CLAUDE.md` | 팀 프로젝트 브리프 |
+
+## 직접 고쳐 쓰고 싶다면
+
+답글의 말투나 규칙을 바꾸고 싶으면 `prompts/system-prompt.md`를 수정하면 됩니다. 코드를 몰라도 읽고 고칠 수 있게 일반 문장으로 써두었습니다.
+
+## 팀
+
+해커톤 팀 프로젝트. PM이 문서·프롬프트·테스트 데이터를, 엔지니어가 앱 코드를 맡았습니다.
