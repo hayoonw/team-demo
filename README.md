@@ -42,8 +42,8 @@
 
 ```bash
 # 1. 코드 내려받기
-git clone <이 레포 주소>
-cd hayoon-team-demo
+git clone https://github.com/hayoonw/team-demo.git
+cd team-demo
 
 # 2. 패키지 설치
 npm install
